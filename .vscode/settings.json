@@ -19,5 +19,27 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "scss"],
+  "stylelint.customSyntax": "postcss-scss",
+  "css.validate": false,
+  "scss.validate": false,
+  "exportall.config.includeFoldersToExport": true,
+  "exportall.config.folderListener": ["/src/utils", "/src/pages", "/src/components"],
+  "json.schemas": [
+    {
+      "fileMatch": [".stylelintrc"],
+      "url": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/stylelintrc.json"
+    }
+  ],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.tabSize": 2
+  },
+  "[yaml]": {
+    "editor.tabSize": 2
   }
 }
