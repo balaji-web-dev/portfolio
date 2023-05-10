@@ -40,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-prettier": "^4.2.1",
     "html-webpack-plugin": "^5.5.1",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
