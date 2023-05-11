@@ -25,6 +25,8 @@
   "stylelint.customSyntax": "postcss-scss",
   "css.validate": false,
   "scss.validate": false,
+  "eslint.format.enable": true,
+  "eslint.validate": ["json", "typescript"],
   "exportall.config.includeFoldersToExport": true,
   "exportall.config.folderListener": ["/src/utils", "/src/pages", "/src/components"],
   "json.schemas": [
