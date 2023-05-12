@@ -1,0 +1,20 @@
+body.light {
+    --background-clr: var(--tertiary);
+    --txt-clr: var(--txt-primary);
+    --hl-txt-clr: var(--primary);
+}
+
+body.dark {
+    --background-clr: var(--secondary);
+    --txt-clr: var(--tertiary);
+    --hl-txt-clr: var(--primary);
+}
+
+:root {
+    --primary: #ed7d31;
+    --secondary: #46434e;
+    --tertiary: #e5e5e5;
+    --txt-primary: #45577b;
+    --black: #000000;
+    --white: #ffffff;
+}
