@@ -1,12 +1,18 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'development';
 
 module.exports = {
     mode,
     entry: './src/index.tsx',
+    devServer: {
+        port: 3000,
+        historyApiFallback: true,
+        hot: true,
+    },
     module: {
         rules: [
             {
@@ -35,7 +41,6 @@ module.exports = {
             },
         ],
     },
-
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         // alias: {
@@ -54,6 +59,13 @@ module.exports = {
             template: 'src/index.html',
             hash: true,
             filename: '../build/index.html',
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: 'public',
+                },
+            ],
         }),
     ],
 };

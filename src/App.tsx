@@ -2,7 +2,7 @@ import './App.scss';
 
 import React from 'react';
 
-import logo from './assets/images/logo.svg';
+import logo from './assets/images/logo.png';
 
 function App() {
     return (
