@@ -1,36 +1,58 @@
 @import './Theme';
+@import './Fonts';
+
+$space: 10px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
     text-align: center;
 }
 
-.App-logo {
+.app-logo {
     height: 40vmin;
+
     pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
+    .app-logo {
+        animation: app-logo-spin infinite 20s linear;
     }
 }
 
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
+.app-header {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
     color: var(--txt-clr);
     font-size: calc(10px + 2vmin);
+    font-family: Lora-Semi-Bold-Italic, 'Open Sans', sans-serif;
 
     background-color: var(--background-clr);
 
+    p {
+        color: var(--txt-clr);
+        font-family: Lora-Medium-Italic, 'Open Sans', sans-serif;
+    }
 }
 
-@keyframes App-logo-spin {
+@keyframes app-logo-spin {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
