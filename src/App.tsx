@@ -1,19 +1,15 @@
 import './App.scss';
 
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import logo from './assets/images/logo.png';
+import { Home } from './pages';
 
 function App() {
     return (
-        <div className='app'>
-            <header className='app-header'>
-                <img src={logo} className='app-logo' alt='logo' />
-                <p>Loading...</p>
-                <h1>Balaji's Personal Portfolio</h1>
-            </header>
-            <section></section>
-        </div>
+        <Routes>
+            <Route path='/' element={<Home />} />
+        </Routes>
     );
 }
 
