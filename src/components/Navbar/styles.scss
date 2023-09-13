@@ -1,0 +1,101 @@
+nav.nav-bar {
+    position: absolute;
+    inset: 5% 5% auto;
+    z-index: 9999;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    width: 90%;
+    height: fit-content;
+    margin: auto 0;
+    padding: 10px;
+
+    border: 1px solid rgb(255 255 255 / 18%);
+    border-radius: 10px;
+
+    background: rgb(255 255 255 / 20%);
+
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+
+    backdrop-filter: blur(5px);
+
+    > div.nav-logo-container {
+        > a > img.nav-logo {
+            width: 32px;
+            height: 32px;
+            margin-left: 10px;
+        }
+    }
+
+    > ul.menu {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin-left: auto;
+
+        > li.menu-item {
+            > a {
+                position: relative;
+
+                display: block;
+
+                width: 150px;
+                margin: 5px 10px;
+
+                border: 2px solid var(--primary);
+                border-radius: 10px;
+
+                cursor: pointer;
+
+                overflow: hidden;
+
+                &:hover .nav-btn {
+                    color: #2d3142;
+                }
+
+                &:hover #translate {
+                    left: 0;
+                }
+
+                .nav-btn {
+                    position: relative;
+
+                    // display: block;
+
+                    width: 100%;
+                    height: fit-content;
+                    padding: 5px 10px;
+
+                    font-size: 1.1rem;
+                    font-family: Lora-Medium-Italic, 'Open Sans', sans-serif;
+                    text-align: center;
+
+                    border: none;
+
+                    background-color: transparent;
+
+                    cursor: pointer;
+
+                    transition: all 0.45s ease-out;
+                }
+
+                #translate {
+                    position: absolute;
+                    top: -30px;
+                    left: -200px;
+
+                    width: 100%;
+                    height: 250%;
+
+                    background-color: #ed7d31;
+
+                    transform: rotate(78deg);
+
+                    transition: all 0.3s ease-out;
+                }
+            }
+        }
+    }
+}

@@ -1,20 +1,50 @@
+// Light mode
 body.light {
-    --background-clr: var(--tertiary);
-    --txt-clr: var(--txt-primary);
-    --hl-txt-clr: var(--primary);
+    --bg-clr: var(--tertiary);
+    --txt-clr: var(--black);
+
+    // home
+    --cv-btn-txt-clr: var(--black);
+    --cv-btn-clr: var(--tertiary);
+
+    // about-me
+    --abt-con-bg-clr: var(--secondary);
+    --abt-con-txt-clr: var(--tertiary);
+
+    // projects
+    --section-title-txt-clr: var(--tertiary);
 }
 
+// Dark mode
 body.dark {
-    --background-clr: var(--secondary);
+    --bg-clr: var(--secondary);
     --txt-clr: var(--tertiary);
-    --hl-txt-clr: var(--primary);
+
+    // home
+    --cv-btn-txt-clr: var(--tertiary);
+    --cv-btn-clr: var(--secondary);
+
+    // about-me
+    --abt-con-bg-clr: var(--pale-bg-clr);
+    --abt-con-txt-clr: var(--tertiary);
+
+    // projects
+    --section-title-txt-clr: var(--secondary);
 }
 
 :root {
+    // theme clr
     --primary: #ed7d31;
     --secondary: #46434e;
-    --tertiary: #e5e5e5;
+    --tertiary: #fafafa;
     --txt-primary: #45577b;
+    --hl-txt-clr: var(--primary);
+    --hl-clr: var(--primary);
+
+    // dark mode pale background colour
+    --pale-bg-clr: #451e0252;
+
+    // major clr
     --black: #000000;
     --white: #ffffff;
 }

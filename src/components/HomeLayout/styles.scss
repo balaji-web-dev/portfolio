@@ -1,0 +1,9 @@
+div.home-layout {
+    height: 100%;
+
+    isolation: isolate;
+
+    overflow-y: overlay;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}

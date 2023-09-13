@@ -1,0 +1,62 @@
+@import '../../global';
+
+div.about-me {
+    position: relative;
+
+    // background-color: blueviolet;
+    scroll-snap-align: start;
+
+    @extend %layout-box-model;
+
+    div.about-container {
+        position: relative;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        &::after {
+            position: absolute;
+            inset: 5%;
+            content: '';
+            z-index: -1;
+
+            border: 1px solid var(--primary);
+            border-radius: 12px;
+
+            background-color: var(--abt-con-bg-clr);
+        }
+
+        div.about-animi {
+            width: 80%;
+            height: 90%;
+            margin: auto;
+            padding: 5%;
+
+            // overflow: hidden;
+        }
+
+        div.about-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+
+            width: 80%;
+            height: 80%;
+            margin: auto auto auto 0;
+
+            > h3,
+            h2,
+            p {
+                color: var(--abt-con-txt-clr);
+                font-size: 1.2rem;
+                font-family: Lora-Italic, 'Open Sans', sans-serif;
+            }
+
+            > h1 {
+                color: var(--primary);
+                font-family: Lora-Medium, 'Open Sans', sans-serif;
+            }
+        }
+    }
+}

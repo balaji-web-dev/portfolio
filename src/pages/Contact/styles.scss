@@ -1,0 +1,102 @@
+@import '../../global';
+
+div.contact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    scroll-snap-align: start;
+
+    @extend %layout-box-model;
+
+    > div.contact-animi {
+        padding: 10px;
+    }
+
+    > div.contact-section {
+        > div.contact-heading {
+            font-size: 4rem;
+            font-family: Lora-Medium, 'Open Sans', sans-serif;
+        }
+
+        div.form-wrapper {
+            display: flex;
+
+            height: 100%;
+            margin: 0 0 0 50px;
+
+            font-size: 1rem;
+
+            border: 2px solid var(--primary);
+            border-width: 2px 0 0 2px;
+            border-radius: 12px 0 0;
+
+            background-color: var(--abt-con-bg-clr);
+
+            > * {
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                margin-top: 30px;
+
+                color: white;
+                font-size: 1.3rem;
+                font-family: Lora-Italic, 'Open Sans', sans-serif;
+            }
+
+            input {
+                margin-top: 15px;
+                padding: 10px;
+
+                border: 1px solid var(--primary);
+                border-radius: 5px;
+            }
+
+            textarea {
+                height: 150px;
+                margin-top: 15px;
+                padding: 10px;
+
+                border: 1px solid var(--primary);
+                border-radius: 5px;
+            }
+
+            > form.contact-form {
+                width: 50%;
+                padding: 20px;
+
+                > button {
+                    margin: 50px 0;
+                    padding: 10px 20px;
+
+                    color: var(--txt-clr);
+                    font-size: 1.3rem;
+                    font-family: Lora-Semi-Bold-Italic, 'Open Sans', sans-serif;
+
+                    border: none;
+                    border-radius: 5px;
+
+                    background-color: var(--hl-clr);
+
+                    box-shadow: 0 8px 15px rgb(0 0 0 / 10%);
+
+                    cursor: pointer;
+
+                    transition: all 0.3s ease 0s;
+
+                    &:hover {
+                        box-shadow: 0 15px 20px rgb(4 217 255/ 40%);
+
+                        transform: translateY(-7px);
+                    }
+                }
+            }
+
+            > div.contact-info {
+                width: 50%;
+                padding: 20px;
+            }
+        }
+    }
+}

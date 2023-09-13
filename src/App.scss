@@ -7,7 +7,36 @@ $space: 10px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    color: var(--txt-clr);
+    scroll-behavior: smooth;
+
+    line-height: 1.5;
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        list-style: none;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+
+    background: transparent; /* Optional: just make scrollbar invisible */
 }
