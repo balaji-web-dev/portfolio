@@ -7,7 +7,7 @@ const mode = process.env.NODE_ENV || 'development';
 
 module.exports = {
     mode,
-    devtool: 'inline-source-map',
+    // devtool: 'inline-source-map',
     entry: './src/index.tsx',
     devServer: {
         port: 3000,
