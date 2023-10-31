@@ -7,7 +7,7 @@ nav.nav-bar {
     flex-wrap: wrap;
     align-items: center;
 
-    width: 90%;
+    width: auto;
     height: fit-content;
     margin: auto 0;
     padding: 10px;
@@ -20,6 +20,12 @@ nav.nav-bar {
     box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
 
     backdrop-filter: blur(5px);
+
+    @media (width < 900px) {
+        inset: 2% 3% auto;
+
+        padding: 5px;
+    }
 
     > div.nav-logo-container {
         > a > img.nav-logo {
@@ -36,6 +42,24 @@ nav.nav-bar {
         margin-left: auto;
 
         > li.menu-item {
+            @media (width < 900px) {
+                &:not(.active) {
+                    display: none;
+                }
+            }
+
+            &.active {
+                > a {
+                    .nav-btn {
+                        color: aliceblue;
+                    }
+
+                    #translate {
+                        left: 0;
+                    }
+                }
+            }
+
             > a {
                 position: relative;
 
@@ -59,7 +83,7 @@ nav.nav-bar {
                     left: 0;
                 }
 
-                .nav-btn {
+                > .nav-btn {
                     position: relative;
 
                     // display: block;
@@ -68,7 +92,7 @@ nav.nav-bar {
                     height: fit-content;
                     padding: 5px 10px;
 
-                    font-size: 1.1rem;
+                    font-size: 1rem;
                     font-family: Lora-Medium-Italic, 'Open Sans', sans-serif;
                     text-align: center;
 
@@ -81,7 +105,7 @@ nav.nav-bar {
                     transition: all 0.45s ease-out;
                 }
 
-                #translate {
+                > #translate {
                     position: absolute;
                     top: -30px;
                     left: -200px;

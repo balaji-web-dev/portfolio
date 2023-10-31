@@ -2,12 +2,14 @@
 
 .hero-banner {
     position: relative;
-    scroll-snap-align: start;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+
+    height: 100dvh;
 
     text-align: center;
+    scroll-snap-align: start;
 
     @extend %layout-box-model;
 
@@ -19,17 +21,21 @@
         position: relative;
 
         padding: 5rem;
+        @media (width < 500px) {
+            margin: auto 0;
+            padding: 0 0.5rem;
+        }
 
         > p.name-sentence {
             color: var(--hl-txt-clr);
-            font-size: 3rem;
+            font-size: 2rem;
             font-family: Lora-Medium-Italic, 'Open Sans', sans-serif;
         }
 
         > p.name {
             position: relative;
 
-            font-size: 8rem;
+            font-size: 4rem;
             font-family: Lora-Semi-Bold, 'Open Sans', sans-serif;
 
             &::after {
@@ -45,6 +51,17 @@
                 background-color: var(--hl-clr);
             }
         }
+
+        .boy-animi {
+            position: absolute;
+            inset: auto 0 0 auto;
+            z-index: 99999;
+
+            margin-left: auto;
+            @media (width < 720px) {
+                display: none;
+            }
+        }
     }
 
     > div.intro-content {
@@ -55,6 +72,10 @@
         justify-content: flex-end;
 
         padding: 0 5rem;
+
+        @media (width < 500px) {
+            padding: 0 0.5rem;
+        }
 
         > .intro-bar {
             height: 100%;
@@ -74,12 +95,12 @@
         }
 
         > div.intro-content-head {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             font-family: Lora-Medium, 'Open Sans', sans-serif;
         }
 
         > p.into-article {
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-family: Lora-Italic, 'Open Sans', sans-serif;
         }
 
@@ -89,38 +110,40 @@
 
             margin: 20px 0;
 
-            > * {
-                height: 3rem;
-                padding: 10px 20px;
+            > a {
+                > * {
+                    height: 3rem;
+                    padding: 10px 20px;
 
-                border: none;
-                border-radius: 5px;
+                    border: none;
+                    border-radius: 5px;
 
-                box-shadow: 0 8px 15px rgb(0 0 0 / 10%);
+                    box-shadow: 0 8px 15px rgb(0 0 0 / 10%);
 
-                transition: all 0.3s ease 0s;
+                    transition: all 0.3s ease 0s;
 
-                &:hover {
-                    box-shadow: 0 15px 20px rgb(4 217 255/ 40%);
+                    &:hover {
+                        box-shadow: 0 15px 20px rgb(4 217 255/ 40%);
 
-                    transform: translateY(-7px);
+                        transform: translateY(-7px);
+                    }
                 }
-            }
 
-            > button.email-me {
-                color: var(--txt-clr);
-                font-size: 1.1rem;
-                font-family: Lora-Semi-Bold-Italic, 'Open Sans', sans-serif;
+                > button.email-me {
+                    color: var(--tertiary);
+                    font-size: 1rem;
+                    font-family: Lora-Semi-Bold-Italic, 'Open Sans', sans-serif;
 
-                background-color: var(--hl-clr);
-            }
+                    background-color: var(--hl-clr);
+                }
 
-            > .download-cv {
-                color: var(--cv-btn-txt-clr);
-                font-size: 1.1rem;
-                font-family: Lora-Semi-Bold-Italic, 'Open Sans', sans-serif;
+                > .download-cv {
+                    color: var(--cv-btn-txt-clr);
+                    font-size: 1rem;
+                    font-family: Lora-Semi-Bold-Italic, 'Open Sans', sans-serif;
 
-                background-color: var(--cv-btn-clr);
+                    background-color: var(--cv-btn-clr);
+                }
             }
         }
     }

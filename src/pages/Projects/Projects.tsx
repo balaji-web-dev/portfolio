@@ -86,8 +86,8 @@ export const Projects: React.FC<{ dataMenu?: IMenuItems }> = ({ dataMenu }) => {
             <div className='project-list'>
                 <ul>
                     {projects?.map(({ projectName, imgUrl }, projectIndex) => (
-                        <li key={`${projectName}`}>
-                            <button onClick={() => setActiveIndex(projectIndex)}>
+                        <li key={`${projectName}`} className='first'>
+                            <button onClick={() => setActiveIndex(projectIndex)} className={activeIndex === projectIndex ? 'active' : ''}>
                                 <img className='project-list-img' alt='crypto' src={imgUrl}></img>
                             </button>
                         </li>
@@ -119,7 +119,7 @@ export const Projects: React.FC<{ dataMenu?: IMenuItems }> = ({ dataMenu }) => {
                           ))}
                 </div>
             </div>
-            <div className='project-description'>
+            <div className='project-description' key={activeIndex}>
                 <div className='section-title'>Projects</div>
                 <h2>{projects?.[activeIndex].projectName}</h2>
                 <p>{projects?.[activeIndex].projectDescription}</p>

@@ -1,12 +1,17 @@
 div.progress-menu {
     position: absolute;
-    inset: 20% 5% 5% 97%;
+    inset: 20% 35px 5% auto;
 
     width: 3px;
 
     border-radius: 3px;
 
     background-color: rgb(255 140 0);
+
+    @media (width < 500px) {
+        inset-inline-end: 10px;
+    }
+
     @keyframes wheel {
         0% {
             transform: translateY(-10px) scaleY(-1) rotate(270deg) translateX(-80%) translateY(20%);
@@ -37,6 +42,10 @@ div.progress-menu {
         text-transform: uppercase;
 
         writing-mode: vertical-lr;
+
+        @media (width < 500px) {
+            display: none;
+        }
     }
 
     ul {

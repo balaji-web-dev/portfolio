@@ -18,7 +18,7 @@ export const HomeLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
                     eachEntry.target.classList.toggle('active', eachEntry.isIntersecting);
                     eachEntry.isIntersecting && setActiveMenu(eachEntry.target.getAttribute('data-menu') as IMenuItems);
                 }),
-            { root: root[0], threshold: 1 }
+            { root: root[0], threshold: 0.6 }
         );
 
         sections.forEach((eachSection) => observer.observe(eachSection));

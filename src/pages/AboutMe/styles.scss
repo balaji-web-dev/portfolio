@@ -3,34 +3,46 @@
 div.about-me {
     position: relative;
 
+    display: grid;
+
     // background-color: blueviolet;
     scroll-snap-align: start;
 
     @extend %layout-box-model;
 
     div.about-container {
-        position: relative;
-
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
 
-        &::after {
-            position: absolute;
-            inset: 5%;
-            content: '';
-            z-index: -1;
+        width: 90%;
+        min-height: 90%;
+        margin: auto;
 
-            border: 1px solid var(--primary);
-            border-radius: 12px;
+        border: 1px solid var(--primary);
+        border-radius: 12px;
 
-            background-color: var(--abt-con-bg-clr);
-        }
+        background-color: var(--abt-con-bg-clr);
+
+        // overflow-y: auto;
+
+        // &::after {
+        //     position: absolute;
+        //     inset: 5%;
+        //     content: '';
+        //     z-index: -1;
+
+        //     border: 1px solid var(--primary);
+        //     border-radius: 12px;
+
+        //     background-color: var(--abt-con-bg-clr);
+        // }
 
         div.about-animi {
             width: 80%;
-            height: 90%;
             margin: auto;
-            padding: 5%;
+            @media (width < 1200px) {
+                display: none;
+            }
 
             // overflow: hidden;
         }
@@ -44,12 +56,17 @@ div.about-me {
             width: 80%;
             height: 80%;
             margin: auto auto auto 0;
+            padding: 10px;
+
+            @media (width < 1200px) {
+                width: 100%;
+            }
 
             > h3,
             h2,
             p {
                 color: var(--abt-con-txt-clr);
-                font-size: 1.2rem;
+                font-size: 1rem;
                 font-family: Lora-Italic, 'Open Sans', sans-serif;
             }
 

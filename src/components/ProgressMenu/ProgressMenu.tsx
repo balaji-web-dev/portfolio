@@ -20,7 +20,7 @@ export const ProgressMenu = <T extends string>({ menuItems, activeMenu }: IProgr
                     position: 'absolute',
                     height: '100px',
                     width: '100px',
-                    inset: `calc(100% * ${menuItems.indexOf(activeMenu)}/3) 0 0`,
+                    inset: `calc(100% * (${menuItems.indexOf(activeMenu)}/${menuItems.length - 1})) 0 0`,
                     marginLeft: 'auto',
                     zIndex: 99999,
                     transform: 'scaleY(-1) rotate(270deg) translateX(-80%) translateY(20%)',

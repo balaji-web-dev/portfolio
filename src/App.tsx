@@ -6,7 +6,7 @@ import { useRoutes } from 'react-router-dom';
 import { AdminLayout, Dashboard, ProjectDetails, RequireAuth } from './admin';
 import { HomeLayout, Layout } from './components';
 import { EMenuItems } from './interfaces';
-import { AboutMe, Contact, HeroBanner, Projects } from './pages';
+import { AboutMe, Contact, HeroBanner, Projects, Skills } from './pages';
 
 function App() {
     const element = useRoutes([
@@ -20,6 +20,7 @@ function App() {
                         <HomeLayout>
                             <HeroBanner dataMenu={EMenuItems.HOME} />
                             <AboutMe dataMenu={EMenuItems.ABOUTME} />
+                            <Skills dataMenu={EMenuItems.SKILLS} />
                             <Projects dataMenu={EMenuItems.PROJECTS} />
                             <Contact dataMenu={EMenuItems.CONTACT} />
                         </HomeLayout>
