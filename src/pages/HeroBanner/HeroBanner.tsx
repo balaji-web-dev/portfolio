@@ -42,7 +42,11 @@ export const HeroBanner: React.FC<{ dataMenu?: IMenuItems }> = ({ dataMenu }) =>
                         >
                             <button className='email-me'>Email Me</button>
                         </a>
-                        <a href='https://drive.google.com/file/d/1hhvzN3GbxHM7e6nom1AKnV1LXWwbVwIq/view?usp=sharing' download={true}>
+                        <a
+                            href='https://drive.google.com/file/d/11f6TQRxeKdRAnSxooTuBV0_4AORiTtfd/view?usp=sharing'
+                            target='_blank'
+                            download={true}
+                        >
                             <button className='download-cv'>Download CV</button>
                         </a>
                     </div>

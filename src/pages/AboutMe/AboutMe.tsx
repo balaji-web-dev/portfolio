@@ -22,7 +22,7 @@ export const AboutMe: React.FC<{ dataMenu?: IMenuItems }> = ({ dataMenu }) => {
                 </div>
                 <div className='about-section'>
                     <h1>About Me</h1>
-                    <h2>Web Developer with 2 Year Experience</h2>
+                    <h2>Web Developer with 2+ Year Experience</h2>
                     <p>
                         Hello there! I'm Balaji, a passionate and dedicated web developer with one year of experience, on a mission to
                         create captivating digital experiences. Welcome to my personal portfolio, where I showcase my journey through the
