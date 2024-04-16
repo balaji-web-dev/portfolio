@@ -237,7 +237,14 @@
             font-size: 1rem;
             font-family: Lora-Italic, 'Open Sans', sans-serif;
 
-            // overflow-y: scroll;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
+    }
+
+    .plain-btn {
+        all: unset;
     }
 }

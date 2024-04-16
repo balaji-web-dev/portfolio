@@ -52,16 +52,74 @@
             }
         }
 
-        .boy-animi {
-            position: absolute;
-            inset: auto 0 0 auto;
-            z-index: 99999;
+        > div.intro-content-wrapper {
+            margin-block: 50px;
 
-            margin-left: auto;
-            @media (width < 720px) {
-                display: none;
+            > div.intro-content-head {
+                font-size: 1.5rem;
+                font-family: Lora-Medium, 'Open Sans', sans-serif;
+            }
+
+            > p.into-article {
+                font-size: 1rem;
+                font-family: Lora-Italic, 'Open Sans', sans-serif;
+            }
+
+            > div.button-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+
+                margin: 20px 0;
+
+                > a {
+                    > * {
+                        height: 3rem;
+                        padding: 10px 20px;
+
+                        border: none;
+                        border-radius: 5px;
+
+                        box-shadow: 0 8px 15px rgb(0 0 0 / 10%);
+
+                        transition: all 0.3s ease 0s;
+
+                        &:hover {
+                            box-shadow: 0 15px 20px rgb(4 217 255/ 40%);
+
+                            transform: translateY(-7px);
+                        }
+                    }
+
+                    > button.email-me {
+                        color: var(--tertiary);
+                        font-size: 1rem;
+                        font-family: Lora-Semi-Bold-Italic, 'Open Sans', sans-serif;
+
+                        background-color: var(--hl-clr);
+                    }
+
+                    > .download-cv {
+                        color: var(--cv-btn-txt-clr);
+                        font-size: 1rem;
+                        font-family: Lora-Semi-Bold-Italic, 'Open Sans', sans-serif;
+
+                        background-color: var(--cv-btn-clr);
+                    }
+                }
             }
         }
+
+        // .boy-animi {
+        //     position: absolute;
+        //     inset: auto 0 0 auto;
+        //     z-index: 99999;
+
+        //     margin-left: auto;
+        //     @media (width < 720px) {
+        //         display: none;
+        //     }
+        // }
     }
 
     > div.intro-content {
@@ -71,81 +129,32 @@
         flex-direction: column;
         justify-content: flex-end;
 
-        padding: 0 5rem;
-
-        @media (width < 500px) {
-            padding: 0 0.5rem;
+        @media (width < 1100px) {
+            display: none;
         }
 
-        > .intro-bar {
-            height: 100%;
-            margin-block: 20px;
+        // padding: 0 5rem;
 
-            background-color: rgb(237 125 49 / 80%);
+        // @media (width < 500px) {
+        //     padding: 0 0.5rem;
+        // }
 
-            // box-shadow: 0 8px 15px rgb(0 0 0 / 10%);
+        // > .intro-bar {
+        //     height: 100%;
+        //     margin-block: 20px;
 
-            transform: rotate3d(1, 1, 1, 359deg);
+        //     background-color: rgb(237 125 49 / 80%);
 
-            clip-path: polygon(22% 72%, 100% 100%, 25% 100%, 0 100%, 28% 0);
+        //     // box-shadow: 0 8px 15px rgb(0 0 0 / 10%);
 
-            &.invert {
-                transform: scale(-1, -1);
-            }
-        }
+        //     transform: rotate3d(1, 1, 1, 359deg);
 
-        > div.intro-content-head {
-            font-size: 1.5rem;
-            font-family: Lora-Medium, 'Open Sans', sans-serif;
-        }
+        //     clip-path: polygon(22% 72%, 100% 100%, 25% 100%, 0 100%, 28% 0);
 
-        > p.into-article {
-            font-size: 1rem;
-            font-family: Lora-Italic, 'Open Sans', sans-serif;
-        }
-
-        > div.button-container {
-            display: flex;
-            gap: 15px;
-
-            margin: 20px 0;
-
-            > a {
-                > * {
-                    height: 3rem;
-                    padding: 10px 20px;
-
-                    border: none;
-                    border-radius: 5px;
-
-                    box-shadow: 0 8px 15px rgb(0 0 0 / 10%);
-
-                    transition: all 0.3s ease 0s;
-
-                    &:hover {
-                        box-shadow: 0 15px 20px rgb(4 217 255/ 40%);
-
-                        transform: translateY(-7px);
-                    }
-                }
-
-                > button.email-me {
-                    color: var(--tertiary);
-                    font-size: 1rem;
-                    font-family: Lora-Semi-Bold-Italic, 'Open Sans', sans-serif;
-
-                    background-color: var(--hl-clr);
-                }
-
-                > .download-cv {
-                    color: var(--cv-btn-txt-clr);
-                    font-size: 1rem;
-                    font-family: Lora-Semi-Bold-Italic, 'Open Sans', sans-serif;
-
-                    background-color: var(--cv-btn-clr);
-                }
-            }
-        }
+        //     &.invert {
+        //         transform: scale(-1, -1);
+        //     }
+        // }
     }
 
     // unwanted

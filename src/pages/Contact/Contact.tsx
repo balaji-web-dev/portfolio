@@ -1,9 +1,11 @@
 import './styles.scss';
 
-import Lottie from 'lottie-react';
 import React, { useState } from 'react';
 
-import * as contactAnimi from '../../assets/lotties/contactAnimi.json';
+import gmailIco from '../../assets/images/contact/gmailIco.png';
+import linkedinIco from '../../assets/images/contact/linkedinIco.png';
+import phoneIco from '../../assets/images/contact/phoneIco.png';
+
 import { IMenuItems } from '../../interfaces';
 
 const initialData = { name: '', mail: '', msg: '' };
@@ -48,7 +50,24 @@ export const Contact: React.FC<{ dataMenu?: IMenuItems }> = ({ dataMenu }) => {
                 .toLowerCase()}
             data-menu={dataMenu}
         >
-            <div className='contact-animi'>
+            <div className='contact-details'>
+                <h2 className='contact-name'>BALAJI K</h2>
+                <div className='social-links'>
+                    <a href='mailto:balls.ksj@gmail.com'>
+                        <img src={gmailIco} alt='Email' style={{ height: '25px', width: '25px' }} />
+                        balls.ksj@gmail.com
+                    </a>
+                    <a href='tel:9384176200'>
+                        <img src={phoneIco} alt='Phone' style={{ height: '25px', width: '25px' }} />
+                        +91 9384176200
+                    </a>
+                    <a href='https://www.linkedin.com/in/balajik20/' target='_blank'>
+                        <img src={linkedinIco} alt='linkedIn' style={{ height: '25px', width: '25px' }} />
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+            {/* <div className='contact-animi'>
                 <Lottie animationData={contactAnimi} loop={true} />
             </div>
             <div className='contact-section'>
@@ -80,7 +99,7 @@ export const Contact: React.FC<{ dataMenu?: IMenuItems }> = ({ dataMenu }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

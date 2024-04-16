@@ -4,6 +4,9 @@ import Lottie from 'lottie-react';
 import React from 'react';
 
 import aboutAnimi from '../../assets/lotties/aboutAnimi.json';
+import aboutUsAnimi from '../../assets/lotties/aboutUsAnimi.json';
+// import aboutMeAnimi from '../../assets/lotties/aboutMeAnimi.json';
+import abtMeAnimi from '../../assets/lotties/abtMeAnimi.json';
 import { IMenuItems } from '../../interfaces';
 
 export const AboutMe: React.FC<{ dataMenu?: IMenuItems }> = ({ dataMenu }) => {
@@ -18,7 +21,7 @@ export const AboutMe: React.FC<{ dataMenu?: IMenuItems }> = ({ dataMenu }) => {
         >
             <div className='about-container'>
                 <div className='about-animi'>
-                    <Lottie animationData={aboutAnimi} loop={true} />
+                    <Lottie animationData={abtMeAnimi} loop={true} />
                 </div>
                 <div className='about-section'>
                     <h1>About Me</h1>

@@ -18,10 +18,10 @@ div.about-me {
         min-height: 90%;
         margin: auto;
 
-        border: 1px solid var(--primary);
+        border: 2px solid var(--primary);
         border-radius: 12px;
 
-        background-color: var(--abt-con-bg-clr);
+        // background-color: var(--abt-con-bg-clr);
 
         // overflow-y: auto;
 
@@ -65,7 +65,7 @@ div.about-me {
             > h3,
             h2,
             p {
-                color: var(--abt-con-txt-clr);
+                // color: var(--abt-con-txt-clr);
                 font-size: 1rem;
                 font-family: Lora-Italic, 'Open Sans', sans-serif;
             }

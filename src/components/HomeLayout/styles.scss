@@ -3,8 +3,6 @@ div.home-layout {
     height: 100%;
     margin-inline: auto;
 
-    isolation: isolate;
-
     overflow-y: overlay;
     scroll-behavior: smooth;
     scroll-snap-type: y proximity;

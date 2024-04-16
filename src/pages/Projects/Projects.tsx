@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 
 import { projectDbRef } from '../../firebase';
 import { IMenuItems, IProject } from '../../interfaces';
+import { Modal } from '../../components';
 
 export const Projects: React.FC<{ dataMenu?: IMenuItems }> = ({ dataMenu }) => {
     const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -75,55 +76,77 @@ export const Projects: React.FC<{ dataMenu?: IMenuItems }> = ({ dataMenu }) => {
     }, []);
 
     return (
-        <div
-            className='projects'
-            id={dataMenu
-                ?.replace(/([a-z])([A-Z])/g, '$1-$2')
-                .replace(/[\s_]+/g, '-')
-                .toLowerCase()}
-            data-menu={dataMenu}
-        >
-            <div className='project-list'>
-                <ul>
-                    {projects?.map(({ projectName, imgUrl }, projectIndex) => (
-                        <li key={`${projectName}`} className='first'>
-                            <button onClick={() => setActiveIndex(projectIndex)} className={activeIndex === projectIndex ? 'active' : ''}>
-                                <img className='project-list-img' alt='crypto' src={imgUrl}></img>
-                            </button>
-                        </li>
-                    ))}
-                </ul>
+        <>
+            <div
+                className='projects'
+                id={dataMenu
+                    ?.replace(/([a-z])([A-Z])/g, '$1-$2')
+                    .replace(/[\s_]+/g, '-')
+                    .toLowerCase()}
+                data-menu={dataMenu}
+            >
+                <div className='project-list'>
+                    <ul>
+                        {projects?.map(({ projectName, imgUrl }, projectIndex) => (
+                            <li key={`${projectName}`} className='first'>
+                                <button
+                                    onClick={() => setActiveIndex(projectIndex)}
+                                    className={activeIndex === projectIndex ? 'active' : ''}
+                                >
+                                    <img className='project-list-img' alt='crypto' src={imgUrl}></img>
+                                </button>
+                            </li>
+                        ))}
+                        {projects?.map(({ projectName, imgUrl }, projectIndex) => (
+                            <li key={`${projectName}`} className='first'>
+                                <button
+                                    onClick={() => setActiveIndex(projectIndex)}
+                                    className={activeIndex === projectIndex ? 'active' : ''}
+                                >
+                                    <img className='project-list-img' alt='crypto' src={imgUrl}></img>
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className='project-preview'>
+                    <div className='position-indicator'>
+                        {activeIndex + 1} / {projects?.length}
+                    </div>
+                    <div className='project-img-first'>
+                        <img alt='crypto' src={projects?.[activeIndex].imgUrl}></img>
+                    </div>
+                    <div className='project-img-second'>
+                        <img alt='crypto' src={projects?.[activeIndex].imgUrl}></img>
+                    </div>
+                    <div className='project-img-third'>
+                        <img alt='crypto' src={projects?.[activeIndex].imgUrl}></img>
+                    </div>
+                    <div className='slideshow-postion-indicator'>
+                        {projects?.length === 0
+                            ? 'Projects not found...!'
+                            : projects?.map(({ projectName }, projectIndex) => (
+                                  <button
+                                      className={activeIndex === projectIndex ? 'active' : ''}
+                                      key={`${projectName}-${projectIndex}`}
+                                      onClick={() => setActiveIndex(projectIndex)}
+                                  ></button>
+                              ))}
+                    </div>
+                </div>
+                <div className='project-description' key={activeIndex}>
+                    <div className='section-title'>Projects</div>
+                    <h2>{projects?.[activeIndex].projectName}</h2>
+                    <p>{projects?.[activeIndex].projectDescription}</p>
+                    <Modal.OpenButton>
+                        <button className='plain-btn'>See More</button>
+                    </Modal.OpenButton>
+                </div>
             </div>
-            <div className='project-preview'>
-                <div className='position-indicator'>
-                    {activeIndex + 1} / {projects?.length}
-                </div>
-                <div className='project-img-first'>
-                    <img alt='crypto' src={projects?.[activeIndex].imgUrl}></img>
-                </div>
-                <div className='project-img-second'>
-                    <img alt='crypto' src={projects?.[activeIndex].imgUrl}></img>
-                </div>
-                <div className='project-img-third'>
-                    <img alt='crypto' src={projects?.[activeIndex].imgUrl}></img>
-                </div>
-                <div className='slideshow-postion-indicator'>
-                    {projects?.length === 0
-                        ? 'Projects not found...!'
-                        : projects?.map(({ projectName }, projectIndex) => (
-                              <button
-                                  className={activeIndex === projectIndex ? 'active' : ''}
-                                  key={`${projectName}-${projectIndex}`}
-                                  onClick={() => setActiveIndex(projectIndex)}
-                              ></button>
-                          ))}
-                </div>
-            </div>
-            <div className='project-description' key={activeIndex}>
-                <div className='section-title'>Projects</div>
+            <Modal.Dialog>
                 <h2>{projects?.[activeIndex].projectName}</h2>
                 <p>{projects?.[activeIndex].projectDescription}</p>
-            </div>
-        </div>
+            </Modal.Dialog>
+        </>
     );
 };

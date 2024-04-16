@@ -23,6 +23,7 @@ export const Layout: React.FC = () => {
             ></ProgressMenu>
             <Navbar />
             <Outlet />
+
             <footer></footer>
         </div>
     );
